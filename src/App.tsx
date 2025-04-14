@@ -1,7 +1,3 @@
-// Desktop: min 768
-// Tablet: 375 - 768
-// Mobile: max 375
-
 import { type CTAProps, CTA } from "@/components/cta";
 
 const CTAValues: CTAProps = {

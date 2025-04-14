@@ -1,54 +1,92 @@
-# React + TypeScript + Vite
+# CTA Component Documentation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Type Definition
+The CTA (Call To Action) component accepts the following properties:
 
-Currently, two official plugins are available:
+### CTA Properties
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+| Property    | Type            | Required | Default | Constraints                                   | Description                                    |
+|------------|-----------------|----------|---------|-----------------------------------------------|------------------------------------------------|
+| `label`    | string         | Yes      | -       | Min: 2 chars, Max: 50 chars                   | The label text for the CTA component           |
+| `title`    | string         | Yes      | -       | Min: 5 chars, Max: 100 chars                  | The main title/heading of the CTA              |
+| `bodyCopy` | string         | No       | `null`  | Max: 300 chars                                | Optional descriptive text below the title      |
+| `button`   | ButtonProps    | No       | `null`  | -                                             | Optional button configuration                   |
+| `blocks`   | CTABlockProps[]| Yes      | -       | Must contain exactly 2 blocks                 | Array of content blocks within the CTA         |
 
-## Expanding the ESLint configuration
+### Button Properties
+When including a button, it should have the following properties:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+| Property | Type   | Required | Default | Constraints                | Description                    |
+|----------|--------|----------|---------|----------------------------|--------------------------------|
+| `text`   | string | Yes      | -       | Min: 2 chars, Max: 30 chars| The text shown on the button   |
+| `url`    | string | Yes      | -       | Min: 1 char, Max: 200 chars| The URL the button links to    |
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
+### CTABlock Properties
+Each block in the `blocks` array should have the following properties:
+
+| Property    | Type   | Required | Default | Constraints                  | Description                                |
+|------------|--------|----------|---------|------------------------------|-------------------------------------------|
+| `id`       | string | Yes      | -       | Min: 3 chars, Max: 50 chars  | Unique identifier for the block            |
+| `title`    | string | Yes      | -       | Min: 3 chars, Max: 80 chars  | The main title of the block               |
+| `subTitle` | string | Yes      | -       | Min: 3 chars, Max: 150 chars | Secondary text/description for the block   |
+| `url`      | string | Yes      | -       | Min: 1 char, Max: 200 chars  | URL for the block's link/action           |
+| `imageUrl` | string | Yes      | -       | Min: 1 char, Max: 200 chars  | URL for the block's associated image      |
+
+Note: `-` indicates that there is no default value and the field must be provided.
+
+### Usage Example
+
+```typescript
+const ctaExample: CTA = {
+  label: "Featured",
+  title: "Get Started Today",
+  bodyCopy: "Transform your business with our solutions",
+  button: {
+    text: "Learn More",
+    url: "/get-started"
+  },
+  blocks: [  // Must always contain exactly 2 blocks
+    {
+      id: "block-1",
+      title: "Feature One",
+      subTitle: "Discover amazing capabilities",
+      url: "/feature-one",
+      imageUrl: "/images/feature-one.jpg"
     },
-  },
-})
+    {
+      id: "block-2",
+      title: "Feature Two",
+      subTitle: "Enhanced performance",
+      url: "/feature-two",
+      imageUrl: "/images/feature-two.jpg"
+    }
+  ]
+};
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Notes
+- The `label` and `title` fields are required and must be non-empty strings
+- `bodyCopy` is optional but when provided should be a meaningful description
+- If `button` is provided, both `text` and `url` properties are required
+- `blocks` array must contain exactly 2 CTABlockProps elements
+- All CTABlock properties are required and must be non-empty strings
+- Image URLs should point to valid image resources
+- Block IDs should be unique within the CTA component
+- All string lengths must fall within their specified min/max constraints
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Validation Rules
+1. String length constraints must be strictly followed
+2. The `blocks` array must always contain exactly 2 elements
+3. All URLs must be valid and properly formatted
+4. Block IDs must be unique within the CTA component
+5. All required fields must be provided and non-empty
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+### Best Practices
+1. Keep the `label` concise and descriptive
+2. Use clear and action-oriented text for button labels
+3. Ensure URLs in button configurations are valid
+4. Provide meaningful body copy that adds value to the title
+5. Use descriptive and SEO-friendly image URLs
+6. Keep block titles and subtitles concise but informative
+7. Follow a consistent naming convention for block IDs
+8. Optimize images before setting their URLs
