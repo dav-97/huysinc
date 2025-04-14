@@ -11,7 +11,7 @@ const buttonVariants = cva(
       variant: {
         default:
           "text-secondary font-450 text-[17px] tablet:text-[19px] hover:text-secondary-hover focus:text-secondary-focus",
-        icon: "text-white border border-border/30 hover:border-border/50 focus:border-border/80 p-3",
+        icon: "text-white border-2 border-border/30 hover:border-border/50 focus:border-border/80 p-3",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",
