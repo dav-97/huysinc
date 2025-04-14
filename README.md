@@ -1,5 +1,14 @@
 # CTA Component Documentation
 
+## Installation and Usage
+```bash
+# Install dependencies
+pnpm install
+
+# Run the development server
+pnpm dev
+```
+
 ## Type Definition
 The CTA (Call To Action) component accepts the following properties:
 
