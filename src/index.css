@@ -32,8 +32,8 @@
   --color-accept: var(--accept);
   --color-border: var(--border);
   --color-ring: var(--ring);
-  --breakpoint-tablet: 23.5rem;
-  --breakpoint-desktop: 90rem;
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1024px;
   --font-weight-450: 450;
 }
 
