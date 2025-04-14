@@ -19,10 +19,6 @@
 
 @theme inline {
   --font-main: "TT Commons Pro";
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
@@ -38,10 +34,10 @@
   --color-ring: var(--ring);
   --breakpoint-tablet: 23.5rem;
   --breakpoint-desktop: 90rem;
+  --font-weight-450: 450;
 }
 
 :root {
-  --radius: 0.625rem;
   --background: #fffcfa;
   --foreground: #1b2426;
   --primary: #39494d;

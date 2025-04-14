@@ -3,37 +3,40 @@
 // Mobile: max 375
 
 import { type CTAProps, CTA } from "@/components/cta";
-
-const CTAValues: CTAProps = {
-  label: "Label",
-  title: "This is the call to action",
-  bodyCopy: "This is an optional body",
-  button: {
-    text: "This is an optional button",
-    url: "/",
-  },
-  blocks: [
-    {
-      id: "Block1",
-      imageUrl: "/image.png",
-      url: "/",
-      title: "Title",
-      subTitle: "Supporting text about the call-to-action goes here.",
-    },
-    {
-      id: "Block2",
-      imageUrl: "/image.png",
-      url: "/",
-      title: "Title 2",
-      subTitle: "Supporting text about the call-to-action goes here.",
-    },
-  ],
-};
+import { useState } from "react";
 
 export const App = () => {
+  const [CTAValues, setCTAValues] = useState<CTAProps>({
+    label: "Label",
+    title: "Call-to-action title",
+    bodyCopy: "Optional body copy goes here.",
+    button: {
+      text: "Optional button",
+      url: "/",
+    },
+    blocks: [
+      {
+        id: "Block1",
+        imageUrl: "/image.png",
+        url: "/",
+        title: "Title",
+        subTitle: "Supporting text about the call-to-action goes here.",
+      },
+      {
+        id: "Block2",
+        imageUrl: "/image.png",
+        url: "/",
+        title: "Title 2",
+        subTitle: "Supporting text about the call-to-action goes here.",
+      },
+    ],
+  });
+
   return (
-    <div className="px-5 py-12 tablet:px-6 tablet:py-16 desktop:p-16">
-      <CTA {...CTAValues} />
-    </div>
+    <>
+      <div className="px-5 py-12 tablet:px-6 tablet:py-16 desktop:p-16">
+        <CTA {...CTAValues} />
+      </div>
+    </>
   );
 };

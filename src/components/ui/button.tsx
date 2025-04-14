@@ -10,7 +10,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "text-secondary underline-offset-4 hover:underline hover:text-secondary-hover focus:text-secondary-focus",
+          "text-secondary font-450 text-[17px] tablet:text-[19px] hover:text-secondary-hover focus:text-secondary-focus",
         icon: "text-white border border-border p-3",
       },
       size: {
