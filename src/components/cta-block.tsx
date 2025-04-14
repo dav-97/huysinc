@@ -11,8 +11,9 @@ export type CTABlockProps = {
 
 export const CTABlock = ({ imageUrl, subTitle, title, url }: CTABlockProps) => {
   return (
-    <div className="relative">
-      <img className="size-full" src={imageUrl} alt={title} />
+    <div className="relative tablet:aspect-2/3 desktop:aspect-auto">
+      <img className="size-full object-cover" src={imageUrl} alt={title} />
+      <div className="absolute bottom-0 top-1/2 w-full bg-linear-to-t from-[#141414] to-[#141414]/0" />
       <div className="absolute flex flex-row bottom-0 p-4 w-full items-end">
         <div className="flex flex-col flex-1 gap-2">
           <span className="font-semibold text-white text-[22px] tablet:text-[28px]">{title}</span>
@@ -20,7 +21,7 @@ export const CTABlock = ({ imageUrl, subTitle, title, url }: CTABlockProps) => {
         </div>
         <Button asChild size="icon" variant="icon">
           <a href={url}>
-            <ArrowRight />
+            <ArrowRight className="size-6" />
           </a>
         </Button>
       </div>

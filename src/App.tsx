@@ -13,8 +13,20 @@ const CTAValues: CTAProps = {
     url: "/",
   },
   blocks: [
-    { id: "Block1", imageUrl: "/image.png", url: "/", title: "Title", subTitle: "Support title" },
-    { id: "Block2", imageUrl: "/image.png", url: "/", title: "Title 2", subTitle: "Support title 2" },
+    {
+      id: "Block1",
+      imageUrl: "/image.png",
+      url: "/",
+      title: "Title",
+      subTitle: "Supporting text about the call-to-action goes here.",
+    },
+    {
+      id: "Block2",
+      imageUrl: "/image.png",
+      url: "/",
+      title: "Title 2",
+      subTitle: "Supporting text about the call-to-action goes here.",
+    },
   ],
 };
 
