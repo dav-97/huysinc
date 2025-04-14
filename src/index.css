@@ -11,32 +11,32 @@
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
+  --color-secondary-hover: var(--secondary-hover);
+  --color-secondary-focus: var(--secondary-focus);
   --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
+  --color-warn: var(--warn);
+  --color-accept: var(--accept);
   --color-border: var(--border);
   --color-ring: var(--ring);
-  --color-link: var(--link);
+  --breakpoint-tablet: 23.5rem;
+  --breakpoint-desktop: 90rem;
 }
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
+  --background: #fffcfa;
+  --foreground: #1b2426;
+  --primary: #39494d;
+  --primary-foreground: #ffffff;
+  --secondary: #bf564d;
+  --secondary-hover: #a6433a;
+  --secondary-focus: #59201b;
+  --secondary-foreground: #ffffff;
+  --destructive: #be3e13;
+  --warn: #f2b661;
+  --accept: #6d8d4e;
   --border: oklch(0.922 0 0);
-  --link: #bf564d;
   --ring: oklch(0.708 0 0);
 }
 

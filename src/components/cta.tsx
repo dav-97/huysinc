@@ -1,3 +1,4 @@
+import { CTABlock, type CTABlockProps } from "@/components/cta-block";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { ArrowRight } from "lucide-react";
@@ -10,13 +11,7 @@ export type CTAProps = {
     text: string;
     url: string;
   };
-  blocks: {
-    id: string;
-    title: string;
-    subTitle: string;
-    url: string;
-    imageUrl: string;
-  }[];
+  blocks: CTABlockProps[];
 };
 
 export const CTA = ({ label, title, bodyCopy, button, blocks }: CTAProps) => {
@@ -32,22 +27,9 @@ export const CTA = ({ label, title, bodyCopy, button, blocks }: CTAProps) => {
           </a>
         </Button>
       )}
-      <div className="grid grid-cols-2">
-        {blocks.map(({ id, imageUrl, subTitle, title, url }) => (
-          <div key={id} className="relative">
-            <img className="size-full" src={imageUrl} alt={title} />
-            <div className="absolute flex flex-row bottom-0 m-4">
-              <div className="flex flex-col flex-1">
-                <span>{title}</span>
-                <span>{subTitle}</span>
-              </div>
-              <Button asChild>
-                <a href={url}>
-                  <ArrowRight />
-                </a>
-              </Button>
-            </div>
-          </div>
+      <div className="grid grid-cols-1 tablet:grid-cols-2 gap-6">
+        {blocks.map((block) => (
+          <CTABlock {...block} key={block.id} />
         ))}
       </div>
     </div>

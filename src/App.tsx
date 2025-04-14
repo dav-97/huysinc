@@ -19,5 +19,9 @@ const CTAValues: CTAProps = {
 };
 
 export const App = () => {
-  return <CTA {...CTAValues} />;
+  return (
+    <div className="px-5 py-12 tablet:px-6 tablet:py-16 desktop:p-16">
+      <CTA {...CTAValues} />
+    </div>
+  );
 };

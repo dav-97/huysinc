@@ -9,7 +9,9 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "text-link underline-offset-4 hover:underline",
+        default:
+          "text-secondary underline-offset-4 hover:underline hover:text-secondary-hover focus:text-secondary-focus",
+        icon: "text-white border border-border p-3",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",
